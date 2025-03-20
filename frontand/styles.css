@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; /* Azul claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333; /* Texto escuro para contraste */
+}
+
+/* Ajustando a container para telas pequenas */
+.container {
+  background-color: #ffffff; /* Cor de fundo branca */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ajustando para ocupar toda a largura */
+  max-width: 400px; /* Limite máximo da largura */
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #4CAF50; /* Cor verde */
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: left;
+  color: #000000;
+}
+
+/* Input e Select */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Botão */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50; /* Cor verde */
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049; /* Cor do botão quando passa o mouse */
+}
+
+/* Aviso de funcionamento */
+#avisoFuncionamento {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #f44336; /* Vermelho para avisos */
+}
+
+/* Lista de agendamentos */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilo dos agendamentos */
+li {
+  background-color: #e0f7fa; /* Azul claro para os agendamentos */
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Logo */
+.logo-placeholder {
+  width: 70px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.barbearia-nome {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Total do valor */
+.total-valor {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+/* Media Queries para telas pequenas */
+@media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+
+  .container {
+      padding: 15px;
+      max-width: 100%;
+  }
+
+  h1 {
+      font-size: 18px;
+  }
+
+  label {
+      font-size: 16px;
+  }
+
+  input, select {
+      font-size: 14px;
+      padding: 10px;
+  }
+
+  button {
+      font-size: 16px;
+      padding: 10px;
+  }
+
+  #avisoFuncionamento {
+      font-size: 16px;
+  }
+}
+
+/* Media Queries para telas maiores (tablets) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .container {
+      max-width: 90%;
+  }
+
+  h1 {
+      font-size: 20px;
+  }
+
+  label {
+      font-size: 17px;
+  }
+
+  input, select {
+      font-size: 15px;
+  }
+
+  button {
+      font-size: 17px;
+  }
+}

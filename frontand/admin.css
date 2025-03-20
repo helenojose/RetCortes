@@ -1,0 +1,89 @@
+/* Estilos globais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Contêiner principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os agendamentos */
+.agendamentos-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.agendamento {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.agendamento h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #3498db;
+}
+
+.agendamento p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Tags de rótulos */
+.agendamento span {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.agendamento .valor {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .agendamento p {
+        font-size: 14px;
+    }
+
+    .agendamento {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .agendamento p {
+        font-size: 12px;
+    }
+
+    .agendamento {
+        padding: 8px;
+    }
+}

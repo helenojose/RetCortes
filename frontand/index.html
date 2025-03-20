@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Agendamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho com logo e nome da barbearia -->
+        <div class="header">
+            <div class="logo-placeholder">
+                <img src="/imagens/logo7 - Copia.png" alt="logo">
+            </div>
+            <div class="barbearia-nome">RET CORTES</div>
+        </div>
+
+        <h1>AGENDAMENTOS</h1>
+        
+        <form id="agendamentoForm">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+            <label for="data">Escolha o dia:</label>
+            <input type="date" id="data" required>
+
+            <label for="hora">Escolha a hora:</label>
+            <select id="hora" required>
+                <option value="" disabled selected>Selecione a hora</option>
+            </select>
+            
+            <!-- Novo campo para seleção de serviço -->
+            <label for="servico">Escolha o serviço:</label>
+            <select id="servico" required>
+                <option value="" disabled selected>Selecione o serviço</option>
+                <option value="25">CORTE DEGRADÊ</option>
+                <option value="35">DEGRADÊ + BARBA</option>
+                <option value="20">SOCIAL</option>
+                <option value="35">CORTE + PIGMENTAÇÃO</option>
+                <option value="55">REFLEXO ALINHADO</option>
+                <option value="70">NEVOU GELO</option>
+            </select>
+            
+            <!-- Exibe o total do valor selecionado -->
+            <p class="total-valor">Valor Total: R$ <span id="valorTotal">0,00</span></p>
+
+            <button type="submit">Agendar</button>
+        </form>
+
+        <div id="avisoFuncionamento">
+            <p>A pausa para o almoço é das 13:00 às 14:00.</p>
+        </div>
+
+       
+        <ul id="listaAgendamentos">
+            <!-- Lista de agendamentos será exibida aqui -->
+        </ul>
+    </div>
+
+    <!-- Importando o arquivo JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
