@@ -4,10 +4,11 @@ const cors = require('cors');
 const app = express();
 const db = new sqlite3.Database('./agendamentos.db');
 
+// Middleware
 app.use(express.json());
 app.use(cors());
 
-// Criação da tabela de agendamentos
+// Criação da tabela de agendamentos (caso não exista)
 db.serialize(() => {
   db.run("CREATE TABLE IF NOT EXISTS agendamentos (id INTEGER PRIMARY KEY, nome TEXT, data TEXT, hora TEXT, servico TEXT, valor REAL)");
 });
@@ -16,7 +17,7 @@ db.serialize(() => {
 app.get('/appointments', (req, res) => {
   db.all("SELECT * FROM agendamentos", (err, rows) => {
     if (err) {
-      res.status(500).json({ error: err.message });
+      return res.status(500).json({ error: err.message });
     }
     res.json({ agendamentos: rows });
   });
@@ -25,6 +26,12 @@ app.get('/appointments', (req, res) => {
 // Rota para adicionar um novo agendamento
 app.post('/appointments', (req, res) => {
   const { nome, data, hora, servico, valor } = req.body;
+  
+  // Verificando se todos os campos necessários foram preenchidos
+  if (!nome || !data || !hora || !servico || !valor) {
+    return res.status(400).json({ error: "Todos os campos são obrigatórios." });
+  }
+
   const stmt = db.prepare("INSERT INTO agendamentos (nome, data, hora, servico, valor) VALUES (?, ?, ?, ?, ?)");
   stmt.run(nome, data, hora, servico, valor, function(err) {
     if (err) {
@@ -35,8 +42,7 @@ app.post('/appointments', (req, res) => {
 });
 
 // Inicia o servidor
-const port = process.env.PORT || 3000;  // Use a porta fornecida pelo Heroku, ou a 3000 para desenvolvimento local
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
-

@@ -17,7 +17,7 @@ function atualizarHorarios() {
     const dataEscolhida = document.getElementById("data").value;
 
     // Buscar os agendamentos do backend
-    fetch('http://localhost:3000/appointments')
+    fetch('/appointments')  // URL relativa para o Vercel
         .then(response => response.json())
         .then(data => {
             // Filtra os agendamentos com a data escolhida
@@ -64,7 +64,7 @@ document.getElementById("agendamentoForm").addEventListener("submit", function(e
         agendamentos.push(novoAgendamento);
 
         // Envia os dados para o backend
-        fetch('http://localhost:3000/appointments', {
+        fetch('/appointments', {  // URL relativa para o Vercel
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(novoAgendamento)
@@ -79,4 +79,3 @@ document.getElementById("agendamentoForm").addEventListener("submit", function(e
         document.getElementById("agendamentoForm").reset();
     }
 });
-
